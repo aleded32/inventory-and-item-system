@@ -11,6 +11,7 @@ public:
 	int capacity;
 
 	void addToinv(potato& Potato, sword& Sword);
+	void checkInv();
 
 	inventory();
 	~inventory();
@@ -33,20 +34,27 @@ inventory::~inventory()
 void inventory::addToinv(potato& Potato, sword& Sword)
 {
 	switch (tileValue)
-	{
-		case 1:
-			items.push_back(sword(Sword));
-			break;
-		case 2:
-			items.push_back(potato(Potato));
-			break;
-	}
+		{
+			case 1:
+				Sword.quantity ++;
+				items.push_back(sword(Sword));
+				
+				break;
+			case 2:
+				Potato.quantity++;
+				items.push_back(potato(Potato));
+				break;
+		}
 
-	for(int i = 0; i < items.size(); i++)
-	{
-		std::cout << items[i].id << std::endl; 
-		std::cout << items[i].itemType << std::endl; 
-		std::cout << items[i].name << std::endl;
-	}
+	
+		//std::cout << " " << std::endl;
+	
+
+	
+	
 }
 
+void inventory::checkInv()
+{
+	
+}
